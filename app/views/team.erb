@@ -1,3 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><%= @team %></title>
+  </head>
+  <body>
+    <h1><%= "Team Name: #{@team}" %></h1>
+    <h2><%= "Team Motto: #{@motto}" %></h2>
+
+
+      <% @heroes.length.times do |x|%>
+        <h2><%= "Hero Name: #{@heroes[x][:name]}" %></h2>
+        <p><%= "Hero Power: #{@heroes[x][:power]}" %></p>
+        <p><%= "Hero Biography: #{@heroes[x][:bio]}" %></p>
+      <%end%>
+
+      <h1>With Models</h1>
+      <% @heroobjects.each do |x|%>
+        <h2><%= "Hero Name: #{x.name}" %></h2>
+        <p><%= "Hero Power: #{x.power}" %></p>
+        <p><%= "Hero Biography: #{x.bio}" %></p>
+      <%end%>
 
 
 
+  </body>
+</html>

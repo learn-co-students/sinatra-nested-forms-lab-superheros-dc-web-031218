@@ -1,1 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Create a Team and Heroes!</title>
+  </head>
+  <body>
+    <h1>Create a Team and Heroes!</h1>
 
+    <form action="/teams" method="post">
+      Team Name: <input type="text" name="team[name]" name="team[name]" value="Flatiron"><br>
+      Team Motto: <input type="text" name="team[motto]" name="team[motto]" value="School Rocks!">
+      <%3.times do |x| x+=1 %>
+        <h2><%= "Hero #{x}"%></h2>
+        Hero's Name: <input type="text" name="heroes[][name]" <%="id=\"member#{x}_name\""%> <%="value=\"Octocat#{x}\""%>><br>
+        Hero's Power: <input type="text" name="heroes[][power]" <%="id=\"member#{x}_power\""%> <%="value=\"Tentaclaw#{x}\""%>><br>
+        Hero's Biography: <input type="text" name="heroes[][bio]" <%="id=\"member#{x}_bio\""%> <%="value=\"Clawing#{x}\""%>><br>
+      <%end%>
+      <input type="submit" value="submit" id="submit">
+
+    </form>
+
+
+  </body>
+</html>
